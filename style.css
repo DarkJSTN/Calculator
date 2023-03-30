@@ -1,0 +1,160 @@
+/* DISPLAY */
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul,ol,li{
+    list-style: none;
+}
+img{
+    vertical-align: top;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: inherit;
+    font-size: inherit;
+}
+html,body{
+    height: 100%;
+    line-height: 1;
+    font-size: 16px;
+    color: black;
+    font-family: 'Roboto Mono', monospace;
+}
+.wrapper{
+    background-color: lightgray;
+    min-height: 100%;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.calculator{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 400px;
+    height: 550px;
+    padding: 10px;
+    border-radius: 30px;
+}
+.display{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 15px;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 380px;
+    height: 120px;
+    border-radius: 25px;
+    background-color: white;
+    box-shadow: -1px 1px gray,
+                -2px 2px gray,
+                -3px 3px gray,
+                -4px 4px gray;
+    overflow: hidden;
+}
+#calculation{
+    font-family: inherit;
+    color: gray;
+    font-size: 18px;
+}
+#result{
+    font-family: inherit;
+    font-size: 40px;
+}
+#buttons{
+    margin-top: 10px;
+    width: 380px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "clear clear remove divide"
+                         "seven eight nine times"
+                         "four five six minus"
+                         "one two three plus"
+                         "zero zero dot equals";
+    grid-auto-rows: 70px;
+    gap: 10px;
+}
+
+/* BUUTONS */
+
+.button{
+    font-size: 30px;
+    border-radius: 20px;
+    color: gray;
+    font-family: inherit;
+    background-color: rgb(243, 243, 243);
+    box-shadow: -1px 1px gray,
+                -2px 2px gray,
+                -3px 3px gray,
+                -4px 4px gray;
+    transition: 0.1s;
+    outline: none;
+}
+.button:hover{
+    background-color: rgb(255, 255, 255);
+}
+#clear-button{
+    grid-area: clear;
+}
+#clear-button:hover{
+    background-color: rgb(250, 124, 124);
+    color: white;
+}
+#remove-button:hover{
+    background-color: rgb(113, 163, 255);
+    color: white;
+}
+#zero{
+    grid-area: zero;
+}
+.button.operation:hover{
+    background-color: rgb(255, 196, 86);
+    color: white;
+}
+#equals:hover{
+    background-color: rgb(83, 255, 83);
+    color: white;
+}
+.button:active{
+    box-shadow: none;
+    transform: translate(-4px, 4px);
+    outline: none;
+}
+
+/* FOOTER */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.fa-github {
+  color: black;
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
